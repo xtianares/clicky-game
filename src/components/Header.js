@@ -11,7 +11,7 @@ class Header extends Component {
               Clicky Game
             </div>
             <div className="col-md-6 text-center">
-              Click an image to begin!
+              {this.props.status}
             </div>
             <div className="col-md-3 score">
               Score: 0 | Top Score: 0

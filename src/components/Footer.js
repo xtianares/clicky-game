@@ -8,13 +8,13 @@ class Footer extends Component {
         <div className="container-fluid text-center text-light text-muted">
           <div className="row d-flex align-items-center">
             <div className="col-md-3 text-md-left">
-              Build with React
+              Built with React
             </div>
             <div className="col-md-6 text-center">
               <span>Copyright &#169; {year} -  <a href="https://www.xtianares.com">Christian Castanares</a></span>
             </div>
             <div className="col-md-3 text-md-right">
-              <a href="#">View in Github</a>
+              <a href="https://github.com/xtianares/clicky-game">View in Github</a>
             </div>
           </div>
         </div>
