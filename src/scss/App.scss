@@ -56,6 +56,12 @@ h1 {
   width: 100%;
   border-radius: 50%;
   cursor: pointer;
+  transform: rotate(0deg);
+  transition: border-radius linear .2s, transform linear .3s;
+}
+.image-container .thumb:hover {
+  border-radius: 5px;
+  transform: rotate(360deg);
 }
 footer {
   border-top: 1px dotted #777;
