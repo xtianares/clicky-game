@@ -18,7 +18,8 @@ body {
   overflow-y: scroll;
 }
 body {
-  background-color: #383838;
+  // background-color: #383838;
+  background-color: #2D2324;
 }
 .container {
   max-width: 1200px;
@@ -57,11 +58,13 @@ h1 {
   border-radius: 50%;
   cursor: pointer;
   transform: rotate(0deg);
-  transition: border-radius linear .2s, transform linear .3s;
+  transition: border-radius linear .2s, transform linear .2s;
+  background-color: transparent;
+  border: 0;
 }
 .image-container .thumb:hover {
   border-radius: 5px;
-  transform: rotate(360deg);
+  transform: rotate(360deg) scale(1.3);
 }
 footer {
   border-top: 1px dotted #777;

@@ -1,26 +1,43 @@
 import React, { Component, Fragment } from 'react';
 import './scss/App.scss';
-import Header from './components/Header.js';
-import Footer from './components/Footer.js';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import data from "./data";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      data,
+      score: 0,
+      topScore: 0,
       status: 'Click an image to begin!'
     };
   }
+  componentDidMount() {
+    this.setState({ data: this.shuffleData(this.state.data) });
+  }
+  shuffleData = data => {
+    let newData = data.sort(function(a, b){return 0.5 - Math.random()});
+    return newData;
+  };
+
+
   click = event => {
     const id = event.target.dataset.id;
     this.setState(
       {
-        status: 'You clicked an image!' + id
+        status: 'You clicked an image! ' + id
       }
     );
   }
 
 
   render() {
+    const images = this.state.data.map((item) =>
+      <img className="thumb img-thumbnail" data-id={item.id} onClick={this.click} key={item.id} src={item.image}></img>
+    );
+
     return (
       <Fragment>
         <Header status={this.state.status} />
@@ -32,18 +49,7 @@ class App extends Component {
           </div>
           <div className="row d-flex justify-content-center">
             <div className="image-container col-12 d-flex justify-content-center">
-              <div className="thumb img-thumbnail" data-id="1" onClick={this.click}></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
-              <div className="thumb img-thumbnail"></div>
+              {images}
             </div>
           </div>
         </main>
