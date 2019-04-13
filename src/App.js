@@ -11,10 +11,12 @@ class App extends Component {
     score: 0,
     topScore: 0,
     status: 'Click an image to begin!'
-  };
+  }
+
   componentDidMount() {
     this.setState({ data: this.shuffleData(this.state.data) });
   }
+
   shuffleData = data => {
     let newData = data.sort(function(a, b){return 0.5 - Math.random()});
     return newData;
@@ -24,10 +26,10 @@ class App extends Component {
     const id = event.target.dataset.id;
     this.setState(
       {
-        // data: this.shuffleData(this.state.data),
+        data: this.shuffleData(this.state.data),
         status: 'You clicked an emoji! ' + id
       }
-    );
+    )
   }
 
   render() {

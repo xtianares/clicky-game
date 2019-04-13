@@ -4,12 +4,12 @@ class GameArea extends Component {
   render() {
     const emojis = this.props.emoji.map((item) =>
       <img className="thumb img-thumbnail"
+        key={item.id}
         data-id={item.id}
         onClick={this.props.handleClick}
-        key={item.id}
         src={item.image}
-        alt=""
-      ></img>
+        alt={item.id}
+      />
     );
 
     return (
