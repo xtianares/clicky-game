@@ -16,7 +16,7 @@ class GameArea extends Component {
       <main className="container">
         <div className="row">
           <div className="col-12 text-center">
-            <h1 className="h3 mt-4 mb-4 mb-md-5">Click as many emoji as you can without clicking the same one</h1>
+            <h1 className="h3 mt-4 mt-md-5 mb-4 mb-md-5 message">{this.props.message}</h1>
           </div>
         </div>
         <div className="row d-flex justify-content-center">

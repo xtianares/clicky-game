@@ -10,8 +10,17 @@ class App extends Component {
     data,
     score: 0,
     topScore: 0,
-    status: 'Click an image to begin!'
+    status: 'Click an emoji to start',
+    message: "Click as many emoji as you can without clicking the same one"
   }
+
+  messages = [
+    "Good job keep it up!",
+    "Great, now keep on clicking!",
+    "Keep on clicking and set a new high score!",
+    "Nice, click like there's no tomorrow!",
+    "You're going great, now click some more!"
+  ]
 
   componentDidMount = () => {
     this.setState({ data: this.shuffleData(this.state.data) });
@@ -55,20 +64,33 @@ class App extends Component {
           data: this.shuffleData(newData),
           score: newScore,
           topScore: Math.max(newScore, this.state.topScore),
-          status: 'You clicked an emoji! ' + id
+          message: this.messages[Math.floor(Math.random()*this.messages.length)]
         }
       )
+      this.animateCSS('.message', 'pulse')
     }
     // if the clicked emoji has been clicked, reset game but retain highscore
     else {
+      this.animateCSS('main', 'shake')
       this.setState(
         {
           data: this.resetData(newData),
           score: 0,
-          status: 'Click an image to begin!'
+          message: 'Oopsies, click an emoji to try again.'
         }
       )
     }
+  }
+
+  animateCSS = (element, animationName, callback) => {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+    let handleAnimationEnd = () => {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+        if (typeof callback === 'function') callback()
+    }
+    node.addEventListener('animationend', handleAnimationEnd)
   }
 
   render() {
@@ -80,7 +102,9 @@ class App extends Component {
           topScore={this.state.topScore}
         />
         <GameArea
+          message={this.state.message}
           emoji={this.state.data}
+          animate={this.animateCSS}
           handleClick={this.handleClick}
         />
         <Footer />
