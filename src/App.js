@@ -12,9 +12,11 @@ class App extends Component {
     topScore: 0,
     status: 'Click an image to begin!'
   };
+
   componentDidMount() {
     this.setState({ data: this.shuffleData(this.state.data) });
   }
+
   shuffleData = data => {
     let newData = data.sort(function(a, b){return 0.5 - Math.random()});
     return newData;
@@ -22,18 +24,61 @@ class App extends Component {
 
   handleClick = event => {
     const id = event.target.dataset.id;
-    this.setState(
-      {
-        // data: this.shuffleData(this.state.data),
-        status: 'You clicked an emoji! ' + id
+    this.checkGuess(id);
+  }
+
+  resetData = data => {
+    const resetData = data.map(item => ({ ...item, clicked: false }));
+    return this.shuffleData(resetData);
+  };
+
+  checkGuess = id => {
+    // if the clicked emoji hasn't been clicked set new state
+    let correctGuess = false;
+    const newData = this.state.data.map(item => {
+      // console.log(item.id);
+      if (item.id === parseInt(id)) {
+        // console.log(item.id);
+        // console.log(item.clicked);
+        // console.log(id);
+        if (!item.clicked) {
+          item.clicked = true;
+          correctGuess = true;
+        }
       }
-    );
+      return item;
+    });
+    if (correctGuess) {
+      let newScore = this.state.score + 1;
+      this.setState(
+        {
+          data: this.shuffleData(newData),
+          score: newScore,
+          topScore: Math.max(newScore, this.state.topScore),
+          status: 'You clicked an emoji! ' + id
+        }
+      )
+    }
+    // if the clicked emoji has been clicked, reset game but retain highscore
+    else {
+      this.setState(
+        {
+          data: this.resetData(newData),
+          score: 0,
+          status: 'Click an image to begin!'
+        }
+      )
+    }
   }
 
   render() {
     return (
       <Fragment>
-        <Header status={this.state.status} />
+        <Header
+          status={this.state.status}
+          score={this.state.score}
+          topScore={this.state.topScore}
+        />
         <GameArea
           emoji={this.state.data}
           handleClick={this.handleClick}

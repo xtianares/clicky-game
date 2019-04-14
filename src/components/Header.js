@@ -8,13 +8,13 @@ class Header extends Component {
         <div className="container-fluid">
           <div className="row d-flex align-items-center">
             <div className="col-md-3 title">
-              Clicky Game
+              Clicky Emojis
             </div>
             <div className="col-md-6 text-center">
               {this.props.status}
             </div>
             <div className="col-md-3 score">
-              Score: 0 | Top Score: 0
+              Score: {this.props.score} | Top Score: {this.props.topScore}
             </div>
           </div>
         </div>

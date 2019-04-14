@@ -9,7 +9,7 @@ class GameArea extends Component {
         key={item.id}
         src={item.image}
         alt=""
-      ></img>
+      />
     );
 
     return (
