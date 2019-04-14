@@ -11,7 +11,7 @@ class App extends Component {
     score: 0,
     topScore: 0,
     status: 'Click an image to begin!'
-  };
+  }
 
   componentDidMount() {
     this.setState({ data: this.shuffleData(this.state.data) });
