@@ -13,7 +13,7 @@ cd clicky-game
 npm install
 ```
 
-To start the local server run this command in your terminal/bash.
+To run the app locally run this command in your terminal/bash.
 
 ```
 npm start
