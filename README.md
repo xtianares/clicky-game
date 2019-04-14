@@ -5,7 +5,7 @@ A ReactJS memory game. The objective of the game is to click as many emojis with
 Check out the game by [clicking here](https://xtianares.github.io/clicky-game).
 
 ### Running the app locally
-To install the application locally, assuming that you already have setup MongoDB and have it running properly locally, run the following commands below in your terminal/bash:
+To install and run the application locally, run the following commands below in your terminal/bash:
 
 ```
 git clone https://github.com/xtianares/crappy-scraper.git
