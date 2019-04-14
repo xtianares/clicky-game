@@ -19,7 +19,7 @@ class App extends Component {
     "Great, now keep on clicking!",
     "Keep on clicking and set a new high score!",
     "Nice, click like there's no tomorrow!",
-    "You're going great, now click some more!"
+    "You're doing great, now click some more!"
   ]
 
   componentDidMount = () => {
