@@ -13,7 +13,7 @@ class App extends Component {
     status: 'Click an image to begin!'
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.setState({ data: this.shuffleData(this.state.data) });
   }
 
