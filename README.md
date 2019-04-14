@@ -1,6 +1,6 @@
 # Clicky Emojis
 
-A ReactJS memory game. The objective of the game is to click as many emojis without clicking the the same one. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A ReactJS memory game. The objective of the game is to click as many emojis without clicking the same one. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Check out the game by [clicking here](https://xtianares.github.io/clicky-game).
 
