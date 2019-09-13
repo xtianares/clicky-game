@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Footer extends Component {
   render() {
-    let year = new Date().getFullYear();
+    const year = new Date().getFullYear();
     return (
       <footer className="footer mt-auto py-3">
         <div className="container-fluid text-center text-light text-muted">
