@@ -58,5 +58,35 @@
     "id": 12,
     "image": "assets/images/smiley/12.png",
     "clicked": false
+  },
+  {
+    "id": 13,
+    "image": "assets/images/smiley/13.png",
+    "clicked": false
+  },
+  {
+    "id": 14,
+    "image": "assets/images/smiley/14.png",
+    "clicked": false
+  },
+  {
+    "id": 15,
+    "image": "assets/images/smiley/15.png",
+    "clicked": false
+  },
+  {
+    "id": 16,
+    "image": "assets/images/smiley/16.png",
+    "clicked": false
+  },
+  {
+    "id": 17,
+    "image": "assets/images/smiley/17.png",
+    "clicked": false
+  },
+  {
+    "id": 18,
+    "image": "assets/images/smiley/18.png",
+    "clicked": false
   }
 ]
