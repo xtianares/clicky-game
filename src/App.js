@@ -69,7 +69,7 @@ class App extends Component {
       )
       this.animateCSS('.message', 'pulse')
     }
-    // if the clicked emoji has been clicked, reset game but retain highscore
+    // if the clicked emoji has been clicked before, reset game but retain highscore
     else {
       this.animateCSS('main', 'shake')
       this.setState(
